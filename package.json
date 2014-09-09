@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "granola",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "bin": {
+    "granola": "bin/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cli-color": "^0.3.2",
+    "commander": "^2.3.0",
+    "exec-sync": "^0.1.6",
+    "q": "^1.0.1",
+    "underscore": "^1.7.0"
+  }
+}

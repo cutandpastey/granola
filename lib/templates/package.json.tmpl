@@ -1,0 +1,31 @@
+{
+		"name"        : "<%= name %>",
+		"version"     : "1.0.0",
+		"description" : "",
+		"private"     : "true",
+		"main"        : "index.js",
+
+		"scripts"     : {
+				"test" : "test",
+				"watch": "nodemon index.js & watchify public/js/app.js -d -v -o build/build.js -t reactify "
+		},
+
+		"author"      : "<%= author %>",
+		"license"     : "ISC",
+
+		"dependencies": {
+				"browserify" : "^5.11.1",
+				"watchify"   : "^1.0.2",
+				"reactify"   : "^0.14.0",
+				"nodemon"    : "^1.2.1",
+				"underscore" : "^1.7.0",
+				"jquery"     : "^2.1.1",
+				"backbone"   : "^1.1.2",
+				"express"    : "^3.0.0",
+				"mediator-js": "^0.9.7",
+				"node-jsx"   : "^0.11.0",
+				"q"          : "^1.0.1",
+				"react"      : "^0.11.1",
+				"superagent" : "^0.18.2"
+		}
+}
