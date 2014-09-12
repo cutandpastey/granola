@@ -1,7 +1,7 @@
 var Q = require('q');
 var React = require('react');
 var mediator = require('granola/mediator');
-var isNode = require('./lib/utils/isNode');
+var isNode = require('granola/lib/utils/isNode');
 
 
 var BaseController = function BaseController(){ this.initialize.apply(this, arguments) };
