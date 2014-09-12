@@ -1,17 +1,17 @@
 {
-		"name"        : "<%= name %>",
-		"version"     : "1.0.0",
-		"description" : "",
-		"private"     : "true",
-		"main"        : "index.js",
+		"name"       : "<%= name %>",
+		"version"    : "1.0.0",
+		"description": "",
+		"private"    : "true",
+		"main"       : "index.js",
 
-		"scripts"     : {
+		"scripts": {
 				"test" : "test",
 				"watch": "nodemon index.js & watchify public/js/app.js -d -v -o public/build/build.js -t reactify "
 		},
 
-		"author"      : "<%= author %>",
-		"license"     : "ISC",
+		"author" : "<%= author %>",
+		"license": "ISC",
 
 		"dependencies": {
 				"browserify" : "^5.11.1",
@@ -26,6 +26,7 @@
 				"node-jsx"   : "^0.11.0",
 				"q"          : "^1.0.1",
 				"react"      : "^0.11.1",
-				"superagent" : "^0.18.2"
+				"superagent" : "^0.18.2",
+				"granola"    : "git+https://cutandpastey@bitbucket.org/cutandpastey/granola.git"
 		}
 }
