@@ -3,14 +3,15 @@ var React = require('react');
 
 var BaseController = require('granola/controller');
 var <%= name %>Model = require('../models/<%= name %>Model');
+var <%= name %>View = require('../views/pages/<%= name %>View.jsx'),
 
 var <%= name %> = function <%= name %>(){ BaseController.apply(this, arguments) }
 
-		<%= name %>.prototype = new BaseController();
+<%= name %>.prototype = new BaseController();
 
-		_.extend(<%= name %>.prototype, {
-			view: require('../views/pages/<%= name %>View.jsx'),
-			initialize: function(){ this.render() }
-			});
+_.extend(<%= name %>.prototype, {
+	view: <%= name %>View,
+	initialize: function(){ this.render() }
+});
 
-		module.exports = <%= name %>;
+module.exports = <%= name %>;
