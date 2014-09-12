@@ -8,7 +8,6 @@ var <%= name %> = function <%= name %>(){ BaseController.apply(this, arguments) 
 <%= name %>.prototype = new BaseController();
 
 _.extend(<%= name %>.prototype, {
-		view: require('../views/pages/<%= name %>.jsx'),
 		initialize: function(){ this.render() }
 });
 
