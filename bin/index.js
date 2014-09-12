@@ -1,4 +1,19 @@
 #!/usr/bin/env node
+
+require('node-jsx').install({extension: '.jsx'});
+
+/*
+ TODO -->
+
+ move app generation into lib/app and require it here
+ - this makes it more testable
+
+ add testing and test stub generation
+ - everyone should test stuff dummy
+
+ */
+
+
 var spawn = require('child_process').spawn;
 var program = require('commander');
 var print = require('../lib/utils/print');
@@ -17,10 +32,10 @@ generatorMap = {
 program
 	.version(packageInfo.version)
 	.option('-g, --generate    [component-type] [component-name]', 'Generate a new app/component boilerplate')
-	.option('-c, --component   [type] [name]', 'Generate a new application boilerplate in [path] (must use -g flag)')
-	.option('-a, --application [path]', 'generate application')
-	.option('-p, --page        [name]', 'Generate a new page boilerplate (must use -g flag)')
-	.option('-w, --watch ', 'Basic proxy for npm run watch')
+	.option('-a, --application [app-name] [path]', 'Generate [app-name] in [path] (must use -g flag)')
+	.option('-c, --component   [type] [name]', 'Generate a new component of [type] with [name] (must use -g flag)')
+	.option('-p, --page        [name] [url]', 'Generate a new page with MVC of [name] and url of [url] (must use -g flag)')
+	.option('-w, --watch ',    'Basic proxy for npm run watch')
 	.parse(process.argv);
 
 if(program.watch){
@@ -54,7 +69,7 @@ if(program.generate){
 		}
 
 		else if(program.page){
-				require('../lib/generators/generateNewPageGroup')([program.page]);
+				require('../lib/generators/generateNewPageGroup')(program.page, program.args);
 		}
 
 

@@ -1,0 +1,17 @@
+var _ = require('underscore');
+
+module.exports = _.template([
+
+		'<!doctype html>',
+		'<html lang="en">',
+				'<head>',
+					'<meta charset="UTF-8">',
+					'<title>Bitbucket Viewer</title>',
+				'</head>',
+				'<body>',
+					'<%= content %>',
+				'</body>',
+				'<script src="/public/build/build.js"></script>',
+		'</html>'
+
+].join(''));

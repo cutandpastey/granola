@@ -15,7 +15,9 @@ BaseController.prototype = {
 
 		render: function(){
 
-				var computedView = this.view({ model: this.model || {} })
+				this.payload = (this.payload || { model: this.model || {} });
+
+				var computedView = this.view(this.payload);
 
 				Q()
 

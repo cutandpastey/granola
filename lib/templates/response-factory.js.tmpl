@@ -1,0 +1,36 @@
+var Q = require('q');
+var template = require('./page-template.tmpl.js');
+
+module.exports = function(Controller, payload){
+
+		var deferred = Q.defer();
+		var ctrl = new Controller(payload);
+		var mediator = ctrl.mediator;
+
+		var clear = function clear(){
+
+				mediator.remove('application:render', onGetHTML);
+				mediator.remove('application:error', onGetError);
+
+				onGetHTML = null;
+				onGetError = null;
+				ctrl = null;
+				mediator = null;
+
+		};
+
+		var onGetHTML = function onGetHTML(html){
+				clear();
+				deferred.resolve(template({ content: html}));
+		};
+
+		var onGetError = function onGetError(err){
+				clear();
+				deferred.reject(template({ content: err}));
+		};
+
+		mediator.subscribe('application:render', onGetHTML);
+		mediator.subscribe('application:error', onGetError);
+
+		return deferred.promise;
+};

@@ -1,0 +1,26 @@
+/*
+ TODO -->
+ NOT SURE IF THIS IS THE RIGHT PLACE FOR THIS TO BE
+ - THINKING IT SHOULD BE PLACED IN THE APPLICATION BOILER PLATE
+ */
+var path = require('path');
+var routes = require(path.resolve(process.cwd(), 'config/routes.json'));
+var responseFactory = require('./responseFactory');
+
+module.exports = function(app){
+
+		Object.keys(routes).forEach(function (route){
+
+				var controller = require( path.resolve( process.cwd(), 'controllers', routes[route] ) )
+
+				app.get(route, function (req, res){
+
+						responseFactory(controller, req.params)
+							.then(function(html){ res.send(200, html) })
+							.fail(function(err){ res.send(500, err) });
+
+		    })
+
+		})
+
+};

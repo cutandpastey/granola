@@ -1,0 +1,14 @@
+var path = require('path');
+
+module.exports = {
+
+<% if (typeof(content) != "undefined") {
+     print(content)
+}
+else {
+		var content = "IndexController: require('../controllers/IndexController')";
+    print(content);
+}
+
+%>
+};
