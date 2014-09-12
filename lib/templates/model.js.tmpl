@@ -1,16 +1,11 @@
-var _ = require('underscore');
-var Service = require('granola/service');
+var Model = require('granola/model')
+var <%= name %> = function(){ Model.apply(this, arguments) };
 
-var <%= name %> = function(){ Service.apply(this, arguments) };
-
-<%= name %>.prototype = new Service();
+<%= name %>.prototype = new Model({});
 
 _.extend(<%= name %>.prototype, {
-		get   : require('./core/get.js'),
-		post  : require('./core/post.js'),
-		put   : require('./core/put.js'),
-		delete: require('./core/delete.js'),
-		template: '<%= url %>'
+		//your code goes here
 });
 
-module.exports = new <%= name %>();
+
+module.exports = <%= name %>;

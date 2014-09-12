@@ -7,17 +7,14 @@
 
 		"scripts": {
 				"test" : "test",
-				"watch": "nodemon index.js & watchify public/js/app.js -d -v -o public/build/build.js -t reactify "
+				"watch": "nodemon index.js & watchify public/js/app.js -d -v -o public/build/build.js -t reactify",
+				"start": "node index.js"
 		},
 
 		"author" : "<%= author %>",
 		"license": "ISC",
 
 		"dependencies": {
-				"browserify" : "^5.11.1",
-				"watchify"   : "^1.0.2",
-				"reactify"   : "^0.14.0",
-				"nodemon"    : "^1.2.1",
 				"underscore" : "^1.7.0",
 				"jquery"     : "^2.1.1",
 				"backbone"   : "^1.1.2",
@@ -28,5 +25,12 @@
 				"react"      : "^0.11.1",
 				"superagent" : "^0.18.2",
 				"granola"    : "git+https://cutandpastey@bitbucket.org/cutandpastey/granola.git"
+		},
+
+		"devDependencies": {
+				"browserify" : "^5.11.1",
+				"watchify"   : "^1.0.2",
+				"reactify"   : "^0.14.0",
+				"nodemon"    : "^1.2.1"
 		}
 }
