@@ -2,4 +2,12 @@ var page = require('page');
 var routeManifest = require('../../config/routes.json');
 var controllers = require('../../config/routes-client');
 
-console.log('---------------------', controllers);
+Object.keys(routeManifest).forEach(function(route) {
+		page(route, function() {
+				var key = routeManifest[route];
+				var Controller = controllers[key];
+				new Controller();
+		})
+});
+
+page();
