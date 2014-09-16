@@ -12,65 +12,86 @@ require('node-jsx').install({extension: '.jsx'});
  - everyone should test stuff dummy
 
  */
+var spawn       = require('child_process').spawn;
+var program     = require('commander');
+var _           = require('underscore');
 
+var stripValues = require('../lib/utils/stripValues');
+var print       = require('../lib/utils/print');
 
-var spawn = require('child_process').spawn;
-var program = require('commander');
-var print = require('../lib/utils/print');
 var packageInfo = require('../package.json');
 
-var generateNewApp = require('../lib/generators/generateNewApplicationBoilerplate');
-
 generatorMap = {
-		controller: require('../lib/generators/generateNewController'),
-		model     : require('../lib/generators/generateNewModel'),
-		service   : require('../lib/generators/generateNewService'),
-		element   : require('../lib/generators/generateNewElement'),
-		page      : require('../lib/generators/generateNewPage')
+  app       : require('../lib/generators/generateNewApplicationBoilerplate'),
+  controller: require('../lib/generators/generateNewController'),
+  model     : require('../lib/generators/generateNewModel'),
+  service   : require('../lib/generators/generateNewService'),
+  element   : require('../lib/generators/generateNewElement'),
+  view      : require('../lib/generators/generateNewPage')
 };
 
+
+/*
+ Setup commander options
+ */
 program
-	.version(packageInfo.version)
-	.option('-g, --generate    [component-type] [component-name]', 'Generate a new app/component boilerplate')
-	.option('-a, --application [app-name] [path]', 'Generate [app-name] in [path] (must use -g flag)')
-	.option('-c, --component   [type] [name]', 'Generate a new component of [type] with [name] (must use -g flag)')
-	.option('-p, --page        [name] [url]', 'Generate a new page with MVC of [name] and url of [url] (must use -g flag)')
-	.option('-w, --watch ',    'Basic proxy for npm run watch')
-	.parse(process.argv);
+  .version(packageInfo.version)
+  .option('-f --filter [term]', 'Filter service generation respose by [term] ie res.body[term]');
 
-if(program.watch){
-		var watcher = spawn('npm', ['run', 'watch']);
-		watcher.stdout.on('data', function(data){ console.log(data.toString('utf-8')) });
-		watcher.stderr.on('data', function(data){ console.log(data.toString('utf-8')) });
-		watcher.on('close', function(code){
-				console.log('closed the process with code %s', code);
-				process.exit();
-		})
+/*
+ Custom help text
+ */
+program.on('--help', function(){ 
+  
+  console.log('  Generators:');
+  console.log();
+  console.log('    granola generate app        { Name } { filepath }');
+  console.log('    granola generate model      { Name }');
+  console.log('    granola generate view       { Name }');
+  console.log('    granola generate controller { Name }');
+  console.log('    granola generate service    { Name } { url }');
+  console.log('    granola generate element    { Name }');
+  console.log();
+
+});
+
+program.parse(process.argv);
+
+
+//program variables
+var exexcutable = process.argv.splice(0, 1);
+var granolaPath = process.argv.splice(0, 1);
+var command     = process.argv.splice(0, 1)[0];
+
+switch (command) {
+  
+  case 'gen':
+  case 'generate':
+    var type = process.argv.splice(0, 1);
+    generate(type);
+    break;
 }
 
-if(program.generate){
-
-		if(program.application){
-				generateNewApp(program.application, program.args[0]);
-		}
-
-		else if(program.component){
-
-				var generator = generatorMap[program.component];
-
-				if(!generator){
-						print();
-						print('red', 'you cant generate a %s, mate!', program.generateComponent);
-						print();
-						process.exit();
-				}
-				generator(program.args);
-
-		}
-
-		else if(program.page){
-				require('../lib/generators/generateNewPageGroup')(program.page, program.args);
-		}
-
-
+function generate (type){
+  if(_.isArray(type)) type = type[0];
+  generatorMap[type](process.argv, program.filter);
 }
+
+/*
+Process any stdin that is piped into the program
+ */
+var stdin = '';
+process.stdin.setEncoding('utf-8')
+process.stdin.on('readable', function () {
+  var data = process.stdin.read();
+  if(data && data.toString) stdin += data.toString();
+});
+
+process.stdin.on('end', function(){
+  stdin = JSON.parse(stdin);
+  var modelData = _.isArray(stdin[program.term]) ? stdin[program.term][0] : stdin[program.term];
+  modelData = stripValues(modelData);
+//  console.log(modelData);
+});
+
+

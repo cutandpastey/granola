@@ -1,4 +1,4 @@
-var _ = require('underscore');
+var _ = require('underscore');,
 var Model = require('granola/model');
 
 var <%= name %> = function(){ Model.apply(this, arguments) };
@@ -6,7 +6,10 @@ var <%= name %> = function(){ Model.apply(this, arguments) };
 <%= name %>.prototype = new Model({});
 
 _.extend(<%= name %>.prototype, {
-		//your code goes here
+  <% if(!!defaults) { %>
+  defaults: <%= defaults %>
+  <% } %>
+  //your code goes here
 });
 
 
