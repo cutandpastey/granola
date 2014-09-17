@@ -19,11 +19,15 @@ BaseController.prototype = {
 
 				var computedView = this.view(this.payload);
 
+        console.log('working');
+
 				Q()
 
 					.then(function(){
 
-							if(isNode()){ this.mediator.publish('application:render', React.renderComponentToString(computedView)) }
+							if(isNode()){ 
+                console.log('rendering from base controller');
+                this.mediator.publish('application:render', React.renderComponentToString(computedView)) }
 							else {
 
 									React.renderComponent(

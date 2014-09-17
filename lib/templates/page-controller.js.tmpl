@@ -1,5 +1,6 @@
 var _ = require('underscore');
 var React = require('react');
+var Q = require('q');
 
 var BaseController = require('granola/controller');
 var <%= name %>Model = require('../models/<%= name %>Model');
@@ -11,7 +12,7 @@ var <%= name %> = function <%= name %>(){ BaseController.apply(this, arguments) 
 
 _.extend(<%= name %>.prototype, {
 	view: <%= name %>View,
-	initialize: function(){ this.render() }
+	initialize: function(attrs, query, options){ this.render() }
 });
 
 module.exports = <%= name %>;

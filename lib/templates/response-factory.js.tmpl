@@ -1,10 +1,10 @@
 var Q = require('q');
 var template = require('./page-template.tmpl.js');
 
-module.exports = function(Controller, payload){
+module.exports = function(Controller, attrs, query){
 
 		var deferred = Q.defer();
-		var ctrl = new Controller(payload);
+		var ctrl = new Controller(attrs, query);
 		var mediator = ctrl.mediator;
 
 		var clear = function clear(){

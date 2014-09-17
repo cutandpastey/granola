@@ -1,3 +1,21 @@
-module.exports = function(){
+var request = require('superagent');
+var _ = require('underscore');
+var Q = require('q');
 
+module.exports = function(payload){
+
+  var deferred = Q.defer();
+  var url = _.template(this.template)(payload);
+  request
+    .get(url)
+    .end(function(err, res){
+      if(err) {
+        deferred.reject(err);
+        return;
+      }
+
+      deferred.resolve(res.body || res.text);
+    })
+
+  return deferred.promise;
 };

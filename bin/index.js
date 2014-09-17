@@ -27,7 +27,8 @@ generatorMap = {
   model     : require('../lib/generators/generateNewModel'),
   service   : require('../lib/generators/generateNewService'),
   element   : require('../lib/generators/generateNewElement'),
-  view      : require('../lib/generators/generateNewPage')
+  view      : require('../lib/generators/generateNewPage'),
+  page      : require('../lib/generators/generateNewPageGroup')
 };
 
 
@@ -61,25 +62,18 @@ program.parse(process.argv);
 //program variables
 var exexcutable = process.argv.splice(0, 1);
 var granolaPath = process.argv.splice(0, 1);
-var command     = process.argv.splice(0, 1)[0];
+var type       = process.argv.splice(0, 1)[0];
 
-switch (command) {
-  
-  case 'gen':
-  case 'generate':
-    var type = process.argv.splice(0, 1);
-    generate(type);
-    break;
-}
+if(_.isArray(type)) type = type[0];
+generatorMap[type](process.argv, program.filter);
 
-function generate (type){
-  if(_.isArray(type)) type = type[0];
-  generatorMap[type](process.argv, program.filter);
-}
+
 
 /*
 Process any stdin that is piped into the program
  */
+
+/*
 var stdin = '';
 process.stdin.setEncoding('utf-8')
 process.stdin.on('readable', function () {
@@ -93,5 +87,5 @@ process.stdin.on('end', function(){
   modelData = stripValues(modelData);
 //  console.log(modelData);
 });
-
+*/
 

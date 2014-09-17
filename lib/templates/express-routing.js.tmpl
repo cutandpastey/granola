@@ -15,7 +15,7 @@ module.exports = function(app){
 
 				app.get(route, function (req, res){
 
-						responseFactory(controller, req.params)
+						responseFactory(controller, req.params, req.query)
 							.then(function(html){ res.send(200, html) })
 							.fail(function(err){ res.send(500, err) });
 

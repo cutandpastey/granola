@@ -1,0 +1,14 @@
+var _ = require('underscore');
+
+var BaseCollection = require('granola/collection');
+var <%= name %>Model = require('../models/<%= name %>Model');
+
+var <%= name %> = function <%= name %>(){ BaseCollection.apply(this, arguments) }
+
+<%= name %>.prototype = new BaseCollection();
+
+_.extend(<%= name %>.prototype, {
+  model: <%= name %>Model
+});
+
+module.exports = <%= name %>;

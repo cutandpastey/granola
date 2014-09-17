@@ -1,12 +1,13 @@
 var page = require('page');
 var routeManifest = require('../../config/routes.json');
 var controllers = require('../../config/routes-client');
+var querystring = require('querystring');
 
 Object.keys(routeManifest).forEach(function(route) {
-		page(route, function() {
-				var key = routeManifest[route];
+    page(route, function(ctx) {
+        var key = routeManifest[route];
 				var Controller = controllers[key];
-				new Controller();
+				new Controller(ctx.params, querystring.parse(location.search.slice(1)));
 		})
 });
 

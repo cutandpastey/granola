@@ -6,7 +6,8 @@ var _ = require('underscore');
 var <%= name %> = React.createClass({
 
 	render: function () {
-		return <p>This is a p tag you div</p>;
+    var model = this.props.model;
+    return <p>This is a p tag you div</p>;
 	}
 
 });
