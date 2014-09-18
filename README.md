@@ -5,9 +5,10 @@
 Granola is an set of reusable system components for javascript applications.  The aim of this project is to provide a set of modular tools useful in both a nodejs environment and the browser. 
 There is also a command line tool (granola) which provides an interface for scaffolding projects.
 
-*NB:
-  DESPITE THE PACKAGE VERSION THIS PROJECT IS STILL UNDER HEAVY DEVELOPMENT AND IS NOT CONSIDERED PRODUCTION READY
-  USE AT YOUR OWN RISK, DON'T BREAK MY BALLS.*
+
+###### *NB:<br>
+  ######DESPITE THE PACKAGE VERSION THIS PROJECT IS STILL UNDER HEAVY DEVELOPMENT AND IS NOT CONSIDERED PRODUCTION READY <br>
+  ######USE AT YOUR OWN RISK, DON'T BREAK MY BALLS.*
 
 
 ###Installation:
@@ -170,8 +171,8 @@ granola app awesomesourceJoyTown
 2. model your api.
 ```bash
 cd awesomesourceJoyTown
-granola service BadManService http://hipsters.api.com/bad-men/cutandpastey
-granola service TingService http://hipsters.api.com/badman-ting/you-gets-me?someQueryVal=wot
+granola service BadManService http://hipsters.my-awesome-api.com/bad-men/cutandpastey
+granola service TingService http://hipsters.my-awesome-api.com/badman-ting/you-gets-me?wot-u-sayin=word
 ```
 
 3. generate a page.
