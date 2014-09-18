@@ -22,14 +22,14 @@ npm link .
 ```
 var model = require('granola/model');
 ```
-A basic model object for your data. <i>Based on (Backbone.Model)[http://backbonejs.org/#Model]</i>.
+A basic model object for your data. <i>Based on [Backbone.Model](http://backbonejs.org/#Model)</i>.
 
 
 ###Collection
 ```
 var collection = require('granola/collection');
 ```
-A basic collection object for your data, depends on granola/model. <i>Based on [Backbone.Collection](http://backbonejs.org/#Collection)</i>.
+A basic collection object for your data, depends on granola/model. <i>Based on [Backbone.Collection][(http://backbonejs.org/#Collection)</i>.
 
 
 ###Mediator
