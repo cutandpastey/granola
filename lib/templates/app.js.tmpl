@@ -3,6 +3,10 @@ var routeManifest = require('../../config/routes.json');
 var controllers = require('../../config/routes-client');
 var querystring = require('querystring');
 
+
+/*
+Loop through all the 'route': 'controller' entries in the config/routes.json
+*/
 Object.keys(routeManifest).forEach(function(route) {
     page(route, function(ctx) {
         var key = routeManifest[route];
@@ -11,4 +15,5 @@ Object.keys(routeManifest).forEach(function(route) {
 		})
 });
 
+// initialize the client side router
 page();

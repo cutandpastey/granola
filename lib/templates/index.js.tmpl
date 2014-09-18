@@ -14,7 +14,7 @@ app.use(app.router);
 router(app);
 
 //static files
-app.use(express.static(process.cwd()));
+app.use('/public', express.static('public'));
 
 /*
  http server

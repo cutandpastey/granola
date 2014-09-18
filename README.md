@@ -217,3 +217,5 @@ initialize: function(attrs, query, options){
 6, go to <a href='http://localhost:3000/awesomesource' target='_blank'>localhost:3000/awesomesource</a>.
 
 7, go to the pub.
+
+

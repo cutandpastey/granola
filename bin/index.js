@@ -15,12 +15,11 @@ require('node-jsx').install({extension: '.jsx'});
 var spawn       = require('child_process').spawn;
 var program     = require('commander');
 var _           = require('underscore');
-
 var stripValues = require('../lib/utils/stripValues');
 var print       = require('../lib/utils/print');
-
 var packageInfo = require('../package.json');
 
+//All the genrators.  Maps to granola { term }
 generatorMap = {
   app       : require('../lib/generators/generateNewApplicationBoilerplate'),
   controller: require('../lib/generators/generateNewController'),
@@ -62,7 +61,7 @@ program.parse(process.argv);
 //program variables
 var exexcutable = process.argv.splice(0, 1);
 var granolaPath = process.argv.splice(0, 1);
-var type       = process.argv.splice(0, 1)[0];
+var type        = process.argv.splice(0, 1)[0];
 
 if(_.isArray(type)) type = type[0];
 generatorMap[type](process.argv, program.filter);
