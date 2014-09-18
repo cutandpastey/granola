@@ -22,14 +22,14 @@ npm link .
 ```js
 var model = require('granola/model');
 ```
-A basic model object for your data. <i>Based on [Backbone.Model](http://backbonejs.org/#Model)</i>.
+A basic model object for your data. <i>Based on <a href='http://backbonejs.org/#Model' target='_blank'>Backbone.Model</a></i>.
 
 
 ###Collection
 ```js
 var collection = require('granola/collection');
 ```
-A basic collection object for your data, depends on granola/model. <i>Based on [Backbone.Collection](http://backbonejs.org/#Collection)</i>.
+A basic collection object for your data, depends on granola/model. <i>Based on <a href='http://backbonejs.org/#Collection' target='_blank'>Backbone.Collection</a></i>.
 
 
 ###Mediator
@@ -94,7 +94,7 @@ adds:
   - ./models/MyAwesomeModel.js
   - ./views/pages/MyAwesomeView.js
 
-then open [localhost:3000/awesomesource](http://localhost:3000/awesomesource)
+then open <a href='http://localhost:3000/awesomesource'>localhost:3000/awesomesource</a>
 
 
 ###service
@@ -171,7 +171,7 @@ granola app awesomesourceJoyTown
 ```bash
 cd awesomesourceJoyTown
 granola service BadManService http://hipsters.api.com/bad-men/cutandpastey
-granola service TingService http://hipsters.api.com/ting/tingname
+granola service TingService http://hipsters.api.com/badman-ting/you-gets-me?someQueryVal=wot
 ```
 
 3. generate a page.
@@ -205,6 +205,6 @@ initialize: function(attrs, query, options){
 
 5. write some presentation in views/pages/AwesomeSourceView.jsx.
 
-6. go to [localhost:3000/awesomesource](http://localhost:3000/awesomesource).
+6. go to <a href='http://localhost:3000/awesomesource' target='_blank'>localhost:3000/awesomesource</a>.
 
 7. go to the pub.
