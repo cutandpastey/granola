@@ -11,7 +11,7 @@ There is also a command line tool (granola) which provides an interface for scaf
   USE AT YOUR OWN RISK, DON'T BREAK MY BALLS.</i>
 
 
-###Installation:
+### *Installation:
 ```bash
 git clone https://github.com/cutandpastey/granola.git
 cd granola
