@@ -11,7 +11,7 @@ There is also a command line tool (granola) which provides an interface for scaf
 
 
 ###Installation:
-```
+```bash
 git clone https://github.com/cutandpastey/granola.git
 cd granola
 npm link .
@@ -19,28 +19,28 @@ npm link .
 
 
 ###Model
-```
+```js
 var model = require('granola/model');
 ```
 A basic model object for your data. <i>Based on [Backbone.Model](http://backbonejs.org/#Model)</i>.
 
 
 ###Collection
-```
+```js
 var collection = require('granola/collection');
 ```
 A basic collection object for your data, depends on granola/model. <i>Based on [Backbone.Collection](http://backbonejs.org/#Collection)</i>.
 
 
 ###Mediator
-```
+```js
 var mediator = require('granola/mediator');
 ```
 Returns a singleton istance of [mediator-js](https://github.com/ajacksified/Mediator.js).
 
 
 ###Service
-```
+```js
 var service = require('granola/service');
 ```
 A basic service boilerplate. (<i>Todo--> fill this out, its basically a shell right now.</i>).
@@ -50,7 +50,7 @@ A basic service boilerplate. (<i>Todo--> fill this out, its basically a shell ri
 
 
 ###app
-```
+```bash
 granola app { app-name } { filepath }
 ```
 Generates application boilerplate in filepath/app-name
@@ -66,12 +66,12 @@ Generates application boilerplate in filepath/app-name
     - js
   - services
     - core
-  - views [reactjs](http://facebook.github.io/react/)
+  - views (these are all [reactjs](http://facebook.github.io/react/) components)
     - elements
     - pages
 
 To get started try:
-```
+```bash
 granola app myAwesomeWebApp
 cd myAwesomeWebApp
 npm run watch
@@ -80,15 +80,15 @@ then open [locahost:3000](http://localhost:3000);
 
 
 ###page
-```
+```bash
 granola page MyAwesomePage /awesomesource
 ```
 Geneartes a MVC triad with a route
 
 adds the route/controller map to config/routes.json :
-  
-  { "/": "IndexController", "/awesomesource": "MyAwesomeSourceController" }
-
+```json
+{ "/": "IndexController", "/awesomesource": "MyAwesomeSourceController" }
+```
 adds:
   - ./controllers/MyAwesomePagePageController.js
   - ./models/MyAwesomeModel.js
@@ -98,7 +98,7 @@ then open [localhost:3000/awesomesource](http://localhost:3000/awesomesource)
 
 
 ###service
-```
+```bash
 granola service MyAwesomeService http://hipsters.my-awesome-api-endpoint.io -f filterKey (optional)
 ```
 Generates a service, model & (optional) collection
@@ -117,7 +117,7 @@ res.body[filterKey] => [{model: data}] or {model: data}
 
 ###model
 
-```
+```bash
 granola model MyAwesomeModel
 ```
 
@@ -126,7 +126,7 @@ adds
 
 ###view
 
-```
+```bash
 granola view MyAwesomeView
 ```
 
@@ -135,7 +135,7 @@ adds
 
 ###controller
 
-```
+```bash
 granola model MyAwesomeController
 ```
 
@@ -144,7 +144,7 @@ adds
 
 ###element
 
-```
+```bash
 granola element MyAwesomeElement
 ```
 
@@ -153,7 +153,7 @@ adds
 
 ###service
 
-```
+```bash
 granola service MyAwesomeService
 ```
 
@@ -163,24 +163,24 @@ adds
 
 ##Workflow
 1. scaffold an application
-```
+```bash
 granola app awesomesourceJoyTown
 ```
 
 2. model your api.
-```
+```bash
 cd awesomesourceJoyTown
 granola service BadManService http://hipsters.api.com/bad-men/cutandpastey
 granola service TingService http://hipsters.api.com/ting/tingname
 ```
 
 3. generate a page.
-```
+```bash
 granola page AwesomeSource /awesomesource
 ```
 
 4. edit a controllers/AwesomeSourceController.js get some BadMan data and add it to our model.
-```
+```js
 initialize: function(attrs, query, options){
   
   Q
@@ -205,6 +205,6 @@ initialize: function(attrs, query, options){
 
 5. write some presentation in views/pages/AwesomeSourceView.jsx.
 
-6. go to (localhost:3000/awesomesource)[http://localhost:3000/awesomesource].
+6. go to [localhost:3000/awesomesource](http://localhost:3000/awesomesource).
 
 7. go to the pub.
