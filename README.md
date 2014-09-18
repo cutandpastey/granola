@@ -29,14 +29,16 @@ npm link .
 ```js
 var model = require('granola/model');
 ```
-A basic model object for your data. <i>Based on <a href='http://backbonejs.org/#Model' target='_blank'>Backbone.Model</a></i>.
+A basic model object for your data. 
+<i>Based on <a href='http://backbonejs.org/#Model' target='_blank'>Backbone.Model</a></i>.
 
 
 ###Collection
 ```js
 var collection = require('granola/collection');
 ```
-A basic collection object for your data, depends on granola/model. <i>Based on <a href='http://backbonejs.org/#Collection' target='_blank'>Backbone.Collection</a></i>.
+A basic collection object for your data, depends on granola/model. 
+<i>Based on <a href='http://backbonejs.org/#Collection' target='_blank'>Backbone.Collection</a></i>.
 
 
 ###Mediator
