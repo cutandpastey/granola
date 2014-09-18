@@ -180,7 +180,7 @@ granola service TingService http://hipsters.my-awesome-api.com/badman-ting/you-g
 granola page AwesomeSource /awesomesource
 ```
 
-4, edit a controllers/AwesomeSourceController.js get some BadMan data and add it to our model.
+4, edit the controllers/AwesomeSourceController.js get some BadMan data and add it to our model.
 ```js
 initialize: function(attrs, query, options){
   
