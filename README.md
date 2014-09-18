@@ -6,9 +6,15 @@ Granola is an set of reusable system components for javascript applications.  Th
 There is also a command line tool (granola) which provides an interface for scaffolding projects.
 
 
-<i>NB:<br>
-  DESPITE THE PACKAGE VERSION THIS PROJECT IS STILL UNDER HEAVY DEVELOPMENT AND IS NOT CONSIDERED PRODUCTION READY <br>
-  USE AT YOUR OWN RISK, DON'T BREAK MY BALLS.</i>
+<i>
+NB:
+<br>
+  DESPITE THE PACKAGE VERSION THIS PROJECT IS STILL UNDER HEAVY DEVELOPMENT AND IS NOT CONSIDERED PRODUCTION READY.
+<br>
+  USE AT YOUR OWN RISK.
+<br>
+  PLEASE DON'T BREAK MY BALLS.
+</i>
 
 
 ###Installation:
