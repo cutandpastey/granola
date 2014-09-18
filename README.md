@@ -29,7 +29,7 @@ npm link .
 ```js
 var model = require('granola/model');
 ```
-A basic model object for your data. 
+Basic model object for your data.<br>
 <i>Based on <a href='http://backbonejs.org/#Model' target='_blank'>Backbone.Model</a></i>.
 
 
@@ -37,7 +37,7 @@ A basic model object for your data.
 ```js
 var collection = require('granola/collection');
 ```
-A basic collection object for your data, depends on granola/model. 
+A basic collection object for your data, depends on granola/model.<br>
 <i>Based on <a href='http://backbonejs.org/#Collection' target='_blank'>Backbone.Collection</a></i>.
 
 
