@@ -1,14 +1,13 @@
 #Granola
----------
 
 ##An opinionated javascript workflow for building hybrid (isomorphic) applications
 
 Granola is an set of reusable system components for javascript applications.  The aim of this project is to provide a set of modular tools useful in both a nodejs environment and the browser. 
 There is also a command line tool (granola) which provides an interface for scaffolding projects.
 
-NB:
+*NB:
   DESPITE THE PACKAGE VERSION THIS PROJECT IS STILL UNDER HEAVY DEVELOPMENT AND IS NOT CONSIDERED PRODUCTION READY
-  USE AT YOUR OWN RISK, DON'T BREAK MY BALLS.
+  USE AT YOUR OWN RISK, DON'T BREAK MY BALLS.*
 
 
 ###Installation:
@@ -30,7 +29,7 @@ A basic model object for your data. <i>Based on (Backbone.Model)[http://backbone
 ```
 var collection = require('granola/collection');
 ```
-A basic collection object for your data, depends on granola/model. <i>Based on (Backbone.Collection)[http://backbonejs.org/#Collection]</i>.
+A basic collection object for your data, depends on granola/model. <i>Based on [Backbone.Collection](http://backbonejs.org/#Collection)</i>.
 
 
 ###Mediator
@@ -67,7 +66,7 @@ Generates application boilerplate in filepath/app-name
     - js
   - services
     - core
-  - views (reactjs)[http://facebook.github.io/react/]
+  - views [reactjs](http://facebook.github.io/react/)
     - elements
     - pages
 
@@ -77,7 +76,7 @@ granola app myAwesomeWebApp
 cd myAwesomeWebApp
 npm run watch
 ```
-then open (locahost:3000)[http://localhost:3000];
+then open [locahost:3000](http://localhost:3000);
 
 
 ###page
@@ -87,6 +86,7 @@ granola page MyAwesomePage /awesomesource
 Geneartes a MVC triad with a route
 
 adds the route/controller map to config/routes.json :
+  
   { "/": "IndexController", "/awesomesource": "MyAwesomeSourceController" }
 
 adds:
@@ -94,7 +94,7 @@ adds:
   - ./models/MyAwesomeModel.js
   - ./views/pages/MyAwesomeView.js
 
-then open (localhost:3000/awesomesource)[http://localhost:3000/awesomesource]
+then open [localhost:3000/awesomesource](http://localhost:3000/awesomesource)
 
 
 ###service
@@ -205,6 +205,6 @@ initialize: function(attrs, query, options){
 
 5. write some presentation in views/pages/AwesomeSourceView.jsx.
 
-6. go to [localhost:3000/awesomesource](http://localhost:3000/awesomesource).
+6. go to (localhost:3000/awesomesource)[http://localhost:3000/awesomesource].
 
 7. go to the pub.
