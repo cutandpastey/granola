@@ -163,24 +163,24 @@ adds
 
 
 ##Workflow
-1. scaffold an application
+1, scaffold an application
 ```bash
 granola app awesomesourceJoyTown
 ```
 
-2. model your api.
+2, model your api.
 ```bash
 cd awesomesourceJoyTown
 granola service BadManService http://hipsters.my-awesome-api.com/bad-men/cutandpastey
 granola service TingService http://hipsters.my-awesome-api.com/badman-ting/you-gets-me?wot-u-sayin=word
 ```
 
-3. generate a page.
+3, generate a page.
 ```bash
 granola page AwesomeSource /awesomesource
 ```
 
-4. edit a controllers/AwesomeSourceController.js get some BadMan data and add it to our model.
+4, edit a controllers/AwesomeSourceController.js get some BadMan data and add it to our model.
 ```js
 initialize: function(attrs, query, options){
   
@@ -204,8 +204,8 @@ initialize: function(attrs, query, options){
 }
 ```
 
-5. write some presentation in views/pages/AwesomeSourceView.jsx.
+5, write some presentation in views/pages/AwesomeSourceView.jsx.
 
-6. go to <a href='http://localhost:3000/awesomesource' target='_blank'>localhost:3000/awesomesource</a>.
+6, go to <a href='http://localhost:3000/awesomesource' target='_blank'>localhost:3000/awesomesource</a>.
 
-7. go to the pub.
+7, go to the pub.
