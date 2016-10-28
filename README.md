@@ -1,5 +1,7 @@
 #Granola
 
+[![Join the chat at https://gitter.im/granola-test/Lobby](https://badges.gitter.im/granola-test/Lobby.svg)](https://gitter.im/granola-test/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ##An opinionated javascript workflow for building hybrid (isomorphic) applications
 
 Granola is an set of reusable system components for javascript applications.  The aim of this project is to provide a set of modular tools useful in both a nodejs environment and the browser. 
